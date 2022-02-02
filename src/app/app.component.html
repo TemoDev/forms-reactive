@@ -20,13 +20,13 @@
         <div class="form-group">
           <label for="projectName">Project Name</label>
           <input type="text" class="form-control" placeholder="Enter Project Name" formControlName="prName">
-          <span class="help-block" *ngIf="assignmentForm.get('invalid') && assignmentForm.get('touched')">Invalid name</span>
+          <span class="help-block" *ngIf="assignmentForm.get('prName').invalid && assignmentForm.get('prName').touched">Invalid name</span>
         </div>
 
         <div class="form-group">
           <label for="mail">Mail</label>
           <input type="email" class="form-control" placeholder="Enter your email" formControlName="email" >
-          <span class="help-block" *ngIf="assignmentForm.get('invalid') && assignmentForm.get('touched')">Invalid email</span>
+          <span class="help-block" *ngIf="assignmentForm.get('email').invalid && assignmentForm.get('email').touched">Invalid email</span>
         </div>
 
         <div class="form-group">
@@ -38,7 +38,7 @@
           </select>
         </div>
 
-        <button class="btn btn-primary" type="submit">Submit Form</button>
+        <button class="btn btn-primary" type="submit" [disabled]="assignmentForm.invalid">Submit Form</button>
 
       </form>
 
